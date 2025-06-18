@@ -618,6 +618,63 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /*View more button*/
+        
+        .hidden-projects {
+            display: none;
+        }
+
+        .view-more-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .view-more-btn {
+            background: linear-gradient(135deg, #2E1760, #171738);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .view-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+
+        .view-more-btn:active {
+            transform: translateY(0);
+        }
+
+        .fade-inn {
+            animation: fadeInn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeInn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
     </style>
 </head>
 <body>
@@ -798,34 +855,95 @@
         <div class="container">
             <h2 class="section-title">Solved Challenges</h2>
             <div class="skills-grid">
+                <!-- First 6 projects (always visible) -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Automated User Messaging Bot for Chat Platforms</h3>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-line"></i> Trading Strategy Optimization Engine </h3>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Custom AI Assistant for Data Processing</h3>
+                    <h3><i class="fas fa-robot"></i> Automated User Messaging Bot for Chat Platforms</h3>
+                    <p>Developed a Python bot that automatically retrieves user lists and sends personalized messages with rate limiting and error handling. Built for OpenFi to scale customer engagement across browser-based chat applications.</p>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-cloud"></i> Gmail Automation Suite </h3>
+                    <h3><i class="fas fa-chart-line"></i> Trading Strategy Optimization Engine</h3>
+                    <p>Created a Python algorithm to test thousands of parameter combinations for PineScript trading indicators. Automatically identifies optimal settings that maximize PNL from historical trading data.</p>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-robot"></i> E-commerce Order Data Scraper </h3>
+                    <h3><i class="fas fa-brain"></i> Custom AI Assistant for Data Processing</h3>
+                    <p>Built an intelligent assistant capable of skip tracing, web scraping, and CRM data entry automation. Designed to streamline manual data collection and processing workflows.</p>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Real Estate Price Analysis Tool </h3>
+                    <h3><i class="fas fa-envelope-open-text"></i> Gmail Automation Suite</h3>
+                    <p>Implemented automated Gmail sending solutions using both Google API with OAuth authentication and browser automation. Enables bulk email campaigns with proper authentication and rate limiting.</p>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Contact Database Management System </h3>
+                    <h3><i class="fas fa-shopping-cart"></i> E-commerce Order Data Scraper</h3>
+                    <p>Developed a secure web scraper for cafe24.com admin panel to extract order data. Includes automated data formatting and export to structured spreadsheets for business analytics.</p>
                 </div>
-                       <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> ChatGPT Integration Application </h3>
+                <div class="skill-category">
+                    <h3><i class="fas fa-map-marked-alt"></i> Real Estate Price Analysis Tool</h3>
+                    <p>Built a scraping and geocoding system that collects property data and compares price per m² against location-based averages. Features automated weekly updates and geographic analysis.</p>
                 </div>
-                       <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Event Attendee Messaging Automation </h3>
+
+                <!-- Hidden projects (shown after clicking View More) -->
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-address-book"></i> Contact Database Management System</h3>
+                    <p>Created an automated Excel-based contact management system with continuous maintenance capabilities. Handles data validation, deduplication, and regular database updates.</p>
                 </div>
-                
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-comments"></i> ChatGPT Integration Application</h3>
+                    <p>Developed a Python application with ChatGPT API integration for automated conversations and intelligent responses. Features custom training and context management.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-calendar-check"></i> Event Attendee Messaging Automation</h3>
+                    <p>Built an automated messaging system for event attendees with AutoGPT integration. Handles personalized communications and follow-up sequences.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-microphone-alt"></i> Audio Transcription Automation Pipeline</h3>
+                    <p>Created an automated transcription system that processes audio files and generates accurate text outputs. Includes batch processing and quality control features.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-share-alt"></i> Multi-Platform Content Distribution System</h3>
+                    <p>Developed automation tools for YouTube and Buzzsprout to WordPress content migration. Handles URL fixing, metadata transfer, and content formatting.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fab fa-youtube"></i> YouTube to WordPress API Bridge</h3>
+                    <p>Built API integration between YouTube and WordPress platforms for automated content syndication. Features custom field mapping and automated publishing workflows.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-video"></i> Automated Demo Video Generator</h3>
+                    <p>Created a system that automatically generates product demonstration videos based on templates and specifications. Includes customization options and batch processing capabilities.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fab fa-linkedin"></i> LinkedIn Outreach Automation</h3>
+                    <p>Developed LinkedIn automation tools for connection requests, messaging, and lead generation. Features smart targeting and compliance with platform limitations.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-cogs"></i> GPT-4 Automation Engineering Suite</h3>
+                    <p>Built comprehensive automation solutions using GPT-4, AutoGPT, and OpenAI APIs. Handles complex workflow automation and intelligent decision-making processes.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-file-excel"></i> Advanced Excel Data Manipulation Tool</h3>
+                    <p>Created sophisticated Excel automation tools for complex data processing, formatting, and analysis. Features custom formulas and automated report generation.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-sync-alt"></i> Sales Navigator to Apollo Integration</h3>
+                    <p>Built seamless data synchronization between LinkedIn Sales Navigator and Apollo CRM. Automates lead transfer and contact enrichment processes.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fab fa-bitcoin"></i> Real-time Cryptocurrency Data Pipeline</h3>
+                    <p>Developed a high-performance system using CryptoFeed to simultaneously download exchange data from multiple sources. Features MongoDB storage, validation, and real-time monitoring with AsyncIO optimization.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-search-plus"></i> AI-Powered Duplicate Detection System</h3>
+                    <p>Created an intelligent system to identify likely duplicates in a 300,000-item grocery product database. Uses advanced matching algorithms to flag similar products and recommend consolidation strategies.</p>
+                </div>
+                <div class="skill-category hidden-projects">
+                    <h3><i class="fas fa-network-wired"></i> Multi-Channel Automation Platform</h3>
+                    <p>Engineered various automation solutions spanning email marketing, social media management, and data processing. Focuses on scalable, reliable automation with proper error handling and monitoring.</p>
+                </div>
+            </div>
+
+            <div class="view-more-container">
+                <button class="view-more-btn" onclick="toggleProjects()">
+                    <i class="fas fa-plus"></i> View More Projects
+                </button>
             </div>
         </div>
     </section>
@@ -1140,6 +1258,41 @@ ${name}`;
         const statsSection = document.querySelector('.stats');
         if (statsSection) {
             observer.observe(statsSection);
+        }
+        /*Expensions Button*/
+        let isExpanded = false;
+
+        function toggleProjects() {
+            const hiddenProjects = document.querySelectorAll('.hidden-projects');
+            const viewMoreBtn = document.querySelector('.view-more-btn');
+            
+            if (!isExpanded) {
+                // Show hidden projects
+                hiddenProjects.forEach((project, index) => {
+                    setTimeout(() => {
+                        project.style.display = 'block';
+                        project.classList.add('fade-inn');
+                    }, index * 100); // Stagger the animation
+                });
+                
+                viewMoreBtn.innerHTML = '<i class="fas fa-minus"></i> Show Less';
+                isExpanded = true;
+            } else {
+                // Hide projects
+                hiddenProjects.forEach(project => {
+                    project.style.display = 'none';
+                    project.classList.remove('fade-inn');
+                });
+                
+                viewMoreBtn.innerHTML = '<i class="fas fa-plus"></i> View More Projects';
+                isExpanded = false;
+                
+                // Scroll back to projects section
+                document.getElementById('projects').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     </script>
 </body>
