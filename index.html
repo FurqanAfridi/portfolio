@@ -6,6 +6,49 @@
     <title>Data Scientist & Python Automation Expert</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* ===== ADD THESE CSS VARIABLES AT THE TOP OF YOUR CSS FILE ===== */
+        :root {
+            /* Light mode colors (default) */
+            --bg-color: #ffffff;
+            --text-color: #333;
+            --secondary-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-color: #e9ecef;
+            --shadow-light: rgba(0,0,0,0.1);
+            --shadow-medium: rgba(0,0,0,0.15);
+            --shadow-heavy: rgba(0,0,0,0.3);
+            --modal-bg: #ffffff;
+            --code-bg: #f8f9fa;
+            --code-border: #e9ecef;
+            --code-text: #2d3748;
+            --nav-bg: rgba(255,255,255,0.95);
+            --contact-form-bg: #ffffff;
+            --popup-bg: white;
+            --headings-color-shade-1: #171738;
+            --headings-color-shade-2: #3423A6;
+
+        }
+
+        /* Dark mode colors */
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --secondary-bg: #2d2d2d;
+            --card-bg: #242424;
+            --border-color: #404040;
+            --shadow-light: rgba(0,0,0,0.3);
+            --shadow-medium: rgba(0,0,0,0.4);
+            --shadow-heavy: rgba(0,0,0,0.6);
+            --modal-bg: #2d2d2d;
+            --code-bg: #1e1e1e;
+            --code-border: #404040;
+            --code-text: #ffff;
+            --nav-bg: rgba(26,26,26,0.95);
+            --contact-form-bg: #242424;
+            --popup-bg: #2d2d2d;
+            --headings-color-shade-1: #ef5fff;
+            --headings-color-shade-2: #ffff;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -13,10 +56,13 @@
         }
 
         body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            /* Keep all your existing body styles */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* Animated Background */
@@ -178,7 +224,7 @@
 
         /* Navigation */
         nav {
-            background: rgba(255,255,255,0.95);
+            background: var(--nav-bg);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             position: sticky;
@@ -195,8 +241,8 @@
         }
 
         nav a {
+            color: var(--text-color);
             text-decoration: none;
-            color: #333;
             font-weight: 600;
             padding: 0.5rem 1rem;
             border-radius: 25px;
@@ -204,7 +250,7 @@
         }
 
         nav a:hover {
-            background: linear-gradient(135deg, #171738, #3423A6);
+            background: linear-gradient(135deg, var(--headings-color-shade-1), var(--headings-color-shade-2));
             color: white;
             transform: translateY(-2px);
         }
@@ -219,7 +265,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            background: linear-gradient(135deg, #171738, #3423A6);
+            background: linear-gradient(135deg, var(--headings-color-shade-1), var(--headings-color-shade-2));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
@@ -233,7 +279,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(135deg, #171738, #3423A6);
+            background: linear-gradient(135deg, var(--headings-color-shade-1), var(--headings-color-shade-2));
             border-radius: 2px;
         }
 
@@ -273,7 +319,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #2E1760;
+            color: var(--headings-color-shade-2);
             display: block;
         }
 
@@ -291,7 +337,7 @@
         }
 
         .skill-category {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            background: var(--card-bg);
             padding: 2rem;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
@@ -306,7 +352,7 @@
         }
 
         .skill-category h3 {
-            color: #2E1760;
+            color: var(--text-color);
             margin-bottom: 1.5rem;
             font-size: 1.4rem;
             display: flex;
@@ -353,10 +399,10 @@
         }
 
         .experience-item {
+            background: var(--card-bg);
             position: relative;
             margin: 2rem 0;
             padding: 2rem;
-            background: rgba(255,255,255,0.9);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             width: 45%;
@@ -364,8 +410,8 @@
         }
 
         .experience-item:hover {
+            box-shadow: 0 20px 40px var(--shadow-medium);
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .experience-item:nth-child(odd) {
@@ -400,12 +446,14 @@
         }
 
         .experience-title {
+            color: var(--text-color);
             font-size: 1.3rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
 
         .experience-company {
+
             color: #764ba2;
             font-weight: 600;
             margin-bottom: 1rem;
@@ -419,10 +467,10 @@
         }
 
         .cert-item {
-            background: linear-gradient(135deg, rgba(102,126,234,0.05), rgba(118,75,162,0.05));
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
             padding: 2rem;
             border-radius: 15px;
-            border: 2px solid rgba(102,126,234,0.1);
             transition: all 0.3s ease;
         }
 
@@ -433,8 +481,8 @@
         }
 
         .cert-title {
+            color: var(--text-color);
             font-weight: bold;
-            color: #333;
             margin-bottom: 0.5rem;
         }
 
@@ -492,7 +540,7 @@
         }
 
         .contact-form {
-            background: #ffffff;
+            background: var(--contact-form-bg);
             padding: 2.4rem;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
@@ -503,17 +551,19 @@
         }
 
         .form-group label {
+            color: var(--text-color);
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #333;
         }
 
         .form-group input,
         .form-group textarea {
+            background: var(--bg-color);
+            color: var(--text-color);
+            border: 2px solid var(--border-color);
             width: 100%;
             padding: 1rem;
-            border: 2px solid rgba(102,126,234,0.2);
             border-radius: 10px;
             font-size: 1rem;
             transition: border-color 0.3s ease;
@@ -675,11 +725,390 @@
             .section-title {
                 font-size: 2rem;
             }
+        }
+            /*View details button*/
+            .view-detail-btn {
+                background-color: #2E1760;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background 0.3s ease;
+                }
+
+                .view-detail-btn:hover {
+                background-color: #3423A6;
+                }
+
+                .modal-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.6);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                }
+
+                .modal-content {
+                background: var(--modal-bg);
+                color: var(--text-color);
+                padding: 2rem;
+                border-radius: 10px;
+                width: 90%;
+                max-width: 700px;
+                max-height: 90vh;
+                overflow-y: auto;
+                position: relative;
+                }
+
+                .close-button {
+                position: absolute;
+                top: 1rem;
+                right: 1.5rem;
+                font-size: 1.5rem;
+                color: #666;
+                cursor: pointer;
+                }
+
+                .modal-content h2,
+                .modal-content h3 {
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+                }
+
+                .modal-img {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+                }
+
+                pre {
+                background: var(--code-bg);
+                padding: 1rem;
+                border-radius: 8px;
+                overflow-x: auto;
+                }
+        
+        /* Project popup overlay */
+        .project-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .project-popup-overlay.active {
+            display: flex;
+        }
+
+        /* Popup content */
+        .project-popup {
+            background: var(--popup-bg);
+            color: var(--text-color);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: popupSlideIn 0.3s ease-out;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes popupSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Close button */
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10001;
+        }
+
+        .popup-close:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Project banner */
+        .project-banner {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .project-banner i {
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Popup content sections */
+        .popup-content {
+            padding: 2rem;
+        }
+
+        .popup-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color:  #667eea;
+        }
+
+        .popup-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color:var(--text-color);
+        }
+
+        .popup-section {
+            margin-bottom: 2rem;
+        }
+
+        .popup-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Code block styling */
+        .code-block {
+            background: var(--code-bg);
+            color: var(--code-text);
+            border: 1px solid var(--code-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        .code-block pre {
+            margin: 0;
+            /*white-space: pre-wrap;*/
+            color: var(--code-text);
+        }
+
+        /* Results section */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .result-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .result-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        /* View Details button */
+        .view-details-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .view-details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        
+        /* ===== THEME TOGGLE BUTTON ===== */
+
+        .theme-toggle {
+            position: fixed;
+            top: 9px;
+            right: 0px;
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            padding: 8px 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            z-index: 1001;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        .theme-icon {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        [data-theme="dark"] .theme-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Smooth transitions for all elements */
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Responsive adjustments for theme toggle */
+        @media (max-width: 768px) {
+        
+        .theme-toggle {
+                top: 15px;
+                right: 15px;
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+        }
+
+        /* Dark mode specific adjustments for gradients */
+        [data-theme="dark"] .bg-animation {
+            background: linear-gradient(45deg, #0a0a0a 0%, #1a1a2e 100%);
+            opacity: 0.3;
+        }
+
+        [data-theme="dark"] .contact-info {
+            background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.2));
+            border: 1px solid rgba(102,126,234,0.3);
+        }
+
+        [data-theme="dark"] .stat-item {
+            background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.2));
+            border: 1px solid rgba(102,126,234,0.3);
+        }
+
+        [data-theme="dark"] .cert-item {
+            background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
+        }
+
+        [data-theme="dark"] .result-item {
+            background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.2));
+        }
+
+        /* Responsive design for popup */
+        @media (max-width: 768px) {
+            .project-popup-overlay {
+                padding: 1rem;
+            }
+            
+            .project-popup {
+                max-height: 95vh;
+            }
+            
+            .project-banner {
+                height: 200px;
+                font-size: 3rem;
+            }
+            
+            .popup-content {
+                padding: 1.5rem;
+            }
+            
+            .popup-title {
+                font-size: 1.5rem;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="bg-animation"></div>
-
     <header>
         <div class="container">
             <div class="hero">
@@ -692,7 +1121,7 @@
                             <i class="fas fa-envelope"></i>
                             Get Free Consultation
                         </a>
-                        <a href="#portfolio" class="btn btn-secondary">
+                        <a href="#projects" class="btn btn-secondary">
                             <i class="fas fa-eye"></i>
                             View My Work
                         </a>
@@ -706,6 +1135,10 @@
     </header>
 
     <nav>
+                <button class="theme-toggle" id="themeToggle">
+        <span class="theme-icon">🌙</span>
+        <span class="theme-text">Dark</span>
+    </button>
         <div class="container">
             <ul>
                 <li><a href="#about">About</a></li>
@@ -851,6 +1284,7 @@
             </div>
         </div>
     </section>
+
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Solved Challenges</h2>
@@ -859,128 +1293,246 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-robot"></i> Automated User Messaging Bot for Chat Platforms</h3>
                     <p>Developed a Python bot that automatically retrieves user lists and sends personalized messages with rate limiting and error handling. Built for OpenFi to scale customer engagement across browser-based chat applications.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
+    
                 <div class="skill-category">
                     <h3><i class="fas fa-chart-line"></i> Trading Strategy Optimization Engine</h3>
                     <p>Created a Python algorithm to test thousands of parameter combinations for PineScript trading indicators. Automatically identifies optimal settings that maximize PNL from historical trading data.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project2')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-brain"></i> Custom AI Assistant for Data Processing</h3>
                     <p>Built an intelligent assistant capable of skip tracing, web scraping, and CRM data entry automation. Designed to streamline manual data collection and processing workflows.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project3')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-envelope-open-text"></i> Gmail Automation Suite</h3>
                     <p>Implemented automated Gmail sending solutions using both Google API with OAuth authentication and browser automation. Enables bulk email campaigns with proper authentication and rate limiting.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-shopping-cart"></i> E-commerce Order Data Scraper</h3>
                     <p>Developed a secure web scraper for cafe24.com admin panel to extract order data. Includes automated data formatting and export to structured spreadsheets for business analytics.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-map-marked-alt"></i> Real Estate Price Analysis Tool</h3>
                     <p>Built a scraping and geocoding system that collects property data and compares price per m² against location-based averages. Features automated weekly updates and geographic analysis.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
 
                 <!-- Hidden projects (shown after clicking View More) -->
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-address-book"></i> Contact Database Management System</h3>
                     <p>Created an automated Excel-based contact management system with continuous maintenance capabilities. Handles data validation, deduplication, and regular database updates.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-comments"></i> ChatGPT Integration Application</h3>
                     <p>Developed a Python application with ChatGPT API integration for automated conversations and intelligent responses. Features custom training and context management.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-calendar-check"></i> Event Attendee Messaging Automation</h3>
                     <p>Built an automated messaging system for event attendees with AutoGPT integration. Handles personalized communications and follow-up sequences.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-microphone-alt"></i> Audio Transcription Automation Pipeline</h3>
                     <p>Created an automated transcription system that processes audio files and generates accurate text outputs. Includes batch processing and quality control features.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-share-alt"></i> Multi-Platform Content Distribution System</h3>
                     <p>Developed automation tools for YouTube and Buzzsprout to WordPress content migration. Handles URL fixing, metadata transfer, and content formatting.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fab fa-youtube"></i> YouTube to WordPress API Bridge</h3>
                     <p>Built API integration between YouTube and WordPress platforms for automated content syndication. Features custom field mapping and automated publishing workflows.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-video"></i> Automated Demo Video Generator</h3>
                     <p>Created a system that automatically generates product demonstration videos based on templates and specifications. Includes customization options and batch processing capabilities.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fab fa-linkedin"></i> LinkedIn Outreach Automation</h3>
                     <p>Developed LinkedIn automation tools for connection requests, messaging, and lead generation. Features smart targeting and compliance with platform limitations.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-cogs"></i> GPT-4 Automation Engineering Suite</h3>
                     <p>Built comprehensive automation solutions using GPT-4, AutoGPT, and OpenAI APIs. Handles complex workflow automation and intelligent decision-making processes.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-file-excel"></i> Advanced Excel Data Manipulation Tool</h3>
                     <p>Created sophisticated Excel automation tools for complex data processing, formatting, and analysis. Features custom formulas and automated report generation.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-sync-alt"></i> Sales Navigator to Apollo Integration</h3>
                     <p>Built seamless data synchronization between LinkedIn Sales Navigator and Apollo CRM. Automates lead transfer and contact enrichment processes.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fab fa-bitcoin"></i> Real-time Cryptocurrency Data Pipeline</h3>
                     <p>Developed a high-performance system using CryptoFeed to simultaneously download exchange data from multiple sources. Features MongoDB storage, validation, and real-time monitoring with AsyncIO optimization.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-search-plus"></i> AI-Powered Duplicate Detection System</h3>
                     <p>Created an intelligent system to identify likely duplicates in a 300,000-item grocery product database. Uses advanced matching algorithms to flag similar products and recommend consolidation strategies.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
                 <div class="skill-category hidden-projects">
                     <h3><i class="fas fa-network-wired"></i> Multi-Channel Automation Platform</h3>
                     <p>Engineered various automation solutions spanning email marketing, social media management, and data processing. Focuses on scalable, reliable automation with proper error handling and monitoring.</p>
+                    <button class="view-details-btn" onclick="openProjectPopup('project1')">
+                        <i class="fas fa-eye"></i> View Details
+                    </button>
                 </div>
             </div>
 
-            <div class="view-more-container">
+        <div class="view-more-container">
                 <button class="view-more-btn" onclick="toggleProjects()">
                     <i class="fas fa-plus"></i> View More Projects
                 </button>
             </div>
         </div>
+        <div class="project-popup-overlay" id="projectPopup">
+                <div class="project-popup">
+                    <button class="popup-close" onclick="closeProjectPopup()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <div class="project-banner" id="popupBanner">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    
+            <div class="popup-content">
+                <h2 class="popup-title" id="popupTitle">Project Title</h2>
+                    <div class="popup-description" id="popupDescription">
+                            Project description will appear here...
+                        </div>
+                        
+                        <div class="popup-section">
+                            <h3><i class="fas fa-code"></i> Technical Implementation</h3>
+                            <div class="code-block">
+                                <pre id="popupCode">Code snippet will appear here... </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="popup-section">
+                            <h3><i class="fas fa-chart-bar"></i> Results & Impact</h3>
+                            <div class="results-grid" id="popupResults">
+                                <!-- Results will be populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
+            
 
     <section id="certifications">
         <div class="container">
             <h2 class="section-title">Certifications & Education</h2>
             <div class="certifications-grid">
                 <div class="cert-item animate-on-scroll">
-                    <div class="cert-title">Introduction to Career Skills in Data Analytics</div>
+                    <a class="cert-title">Bachelor's Degree in Computer Science</a>
+                    <i class="fa-solid fa-building-columns"></i>
+                    <div class="cert-issuer">Bahria University</div>
+                    <div class="cert-date">Jan 2019 - Feb 2023</div>
+                </div>
+                <div class="cert-item animate-on-scroll">
+                    <a href= "https://shorturl.at/W0wb0" class="cert-title">Career Essentials in Data Analysis by Microsoft and LinkedIn </a>
+                    <i class="fa-solid fa-certificate"></i>
+                    <div class="cert-issuer">Microsoft & LinkedIn</div>
+                    <div class="cert-date">Jan 2025</div>
+                </div>
+                <div class="cert-item animate-on-scroll">
+                    <a href= "https://shorturl.at/k3UcC" class="cert-title">Introduction to Career Skills in Data Analytics </a>
+                    <i class="fa-solid fa-certificate"></i>
                     <div class="cert-issuer">LinkedIn</div>
                     <div class="cert-date">Jan 2025</div>
                 </div>
                 <div class="cert-item animate-on-scroll">
-                    <div class="cert-title">Learning Data Analytics Part 2: Extending and Applying Core Knowledge</div>
+                    <a href = "https://shorturl.at/X3MZ3" class="cert-title">Learning Data Analytics Part 2: Extending and Applying Core Knowledge </a>
+                    <i class="fa-solid fa-certificate"></i>
                     <div class="cert-issuer">LinkedIn</div>
                     <div class="cert-date">Jan 2025</div>
                 </div>
                 <div class="cert-item animate-on-scroll">
-                    <div class="cert-title">Learning Data Analytics: 1 Foundations</div>
+                    <a href = "https://shorturl.at/lepfo" class="cert-title">Learning Data Analytics: 1 Foundations </a>
+                    <i class="fa-solid fa-certificate"></i>
                     <div class="cert-issuer">LinkedIn</div>
                     <div class="cert-date">Jan 2025</div>
                 </div>
                 <div class="cert-item animate-on-scroll">
-                    <div class="cert-title">Data Analytics Essentials</div>
+                    <a href="https://www.credly.com/badges/a8be4270-3b3f-42fb-ac24-fcf5dc2fee9e/public_url" class="cert-title">Data Analytics Essentials </a>
+                    <i class="fa-solid fa-certificate"></i>
                     <div class="cert-issuer">Coursera</div>
                     <div class="cert-date">Sep 2023</div>
                 </div>
                 <div class="cert-item animate-on-scroll">
-                    <div class="cert-title">Scrum Fundamentals Certified (SFC)</div>
-                    <div class="cert-issuer">SCRUMstudy</div>
-                    <div class="cert-date">Mar 2021</div>
+                    <a href="https://www.credly.com/badges/14f4c810-958f-45bb-ab48-7757dbb27b02/public_url" class="cert-title">Databases and SQL for Data Science </a>
+                    <i class="fa-solid fa-certificate"></i>
+                    <div class="cert-issuer">Coursera</div>
+                    <div class="cert-date">Sep 2023</div>
                 </div>
                 <div class="cert-item animate-on-scroll">
-                    <div class="cert-title">Bachelor's Degree in Computer Science</div>
-                    <div class="cert-issuer">Bahria University</div>
-                    <div class="cert-date">Jan 2019 - Feb 2023</div>
+                    <a href="https://www.credly.com/badges/c85f9dd9-fb84-40f8-8b06-dbbe4879ff6c/public_url" class="cert-title">Data Science Orientation </a>
+                    <i class="fa-solid fa-certificate"></i>
+                    <div class="cert-issuer">Coursera</div>
+                    <div class="cert-date">Sep 2023</div>
+                </div>
+                <div class="cert-item animate-on-scroll">
+                    <a href = "https://shorturl.at/PyOEw" class="cert-title">Scrum Fundamentals Certified (SFC)</a>
+                    <i class="fa-solid fa-certificate"></i>
+                    <div class="cert-issuer">SCRUMstudy</div>
+                    <div class="cert-date">Mar 2021</div>
                 </div>
             </div>
         </div>
@@ -993,31 +1545,34 @@
                 <div class="contact-info animate-on-scroll">
                     <h3 style="margin-bottom: 2rem; color: #667eea;">Ready to Transform Your Business?</h3>
                     <p style="margin-bottom: 2rem; line-height: 1.8;">Whether you need automation solutions, data analysis, or ETL pipelines, I'm here to help your business grow with cutting-edge technology.</p>
-                    
+                    <a href ="mailto:furqanjavedafridi@gmail.com"> 
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
+                    </a>
                         <div>
-                            <h4>Email</h4>
+                            <h4>Email </i></h4>
                             <p>furqanjavedafridi@gmail.com</p>
                         </div>
                     </div>
-                    
+                    <a href="https://www.linkedin.com/in/furqanjavedafridi/">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fab fa-linkedin"></i>
                         </div>
+                        </a>
                         <div>
                             <h4>LinkedIn</h4>
-                            <p>Connect with me professionally</p>
+                            <p">Connect with me professionally</p>
                         </div>
                     </div>
-                    
+                    <a href = "https://www.upwork.com/freelancers/furqanjavedafridi">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-briefcase"></i>
                         </div>
+                        </a>
                         <div>
                             <h4>Upwork</h4>
                             <p>95% Success Rate | Top Rated</p>
@@ -1294,6 +1849,288 @@ ${name}`;
                 });
             }
         }
+        function openModal(id) {
+                document.getElementById(id).style.display = 'flex';
+            }
+
+        function closeModal(id) {
+                document.getElementById(id).style.display = 'none';
+            }
+    // Project data
+        const projectData = {
+            project1: {
+                title: "Automated User Messaging Bot for Chat Platforms",
+                icon: "fas fa-robot",
+                description: "Developed a sophisticated Python automation bot for OpenFi that revolutionized their customer engagement strategy. The bot intelligently retrieves user lists from chat platforms and sends personalized messages while maintaining platform compliance and optimal performance.",
+                code: `# Core messaging automation with rate limiting
+import time
+import random
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+class ChatBot:
+    def __init__(self, rate_limit=2):
+        self.driver = webdriver.Chrome()
+        self.rate_limit = rate_limit
+        self.sent_count = 0
+    
+    def get_user_list(self):
+        # Extract user list from chat platform
+        users = self.driver.find_elements(By.CLASS_NAME, "user-item")
+        return [user.get_attribute("data-userid") for user in users]
+    
+    def send_personalized_message(self, user_id, template):
+        try:
+            message = template.format(user_id=user_id)
+            message_box = self.driver.find_element(By.ID, "message-input")
+            message_box.send_keys(message)
+            
+            send_btn = self.driver.find_element(By.ID, "send-button")
+            send_btn.click()
+            
+            self.sent_count += 1
+            time.sleep(random.uniform(1, self.rate_limit))
+            return True
+        except Exception as e:
+            print(f"Error sending message: {e}")
+            return False`,
+                results: [
+                    { number: "500+", label: "Messages Sent Daily" },
+                    { number: "95%", label: "Delivery Success Rate" },
+                    { number: "3x", label: "Engagement Increase" },
+                    { number: "80%", label: "Time Saved" }
+                ]
+            },
+            project2: {
+                title: "Trading Strategy Optimization Engine",
+                icon: "fas fa-chart-line",
+                description: "Created an advanced Python algorithm that performs comprehensive backtesting on thousands of parameter combinations for PineScript trading indicators. The system automatically identifies optimal settings that maximize profit and loss (PNL) from historical trading data, enabling traders to make data-driven decisions.",
+                code: `# Trading strategy optimization with backtesting
+import pandas as pd
+import numpy as np
+from itertools import product
+import concurrent.futures
+
+class StrategyOptimizer:
+    def __init__(self, historical_data):
+        self.data = historical_data
+        self.best_params = None
+        self.best_pnl = -float('inf')
+    
+    def backtest_strategy(self, params):
+        """Backtest strategy with given parameters"""
+        ma_short, ma_long, rsi_threshold = params
+        
+        # Calculate indicators
+        self.data['MA_Short'] = self.data['Close'].rolling(ma_short).mean()
+        self.data['MA_Long'] = self.data['Close'].rolling(ma_long).mean()
+        self.data['RSI'] = self.calculate_rsi(self.data['Close'])
+        
+        # Generate signals
+        signals = self.generate_signals(rsi_threshold)
+        pnl = self.calculate_pnl(signals)
+        
+        return params, pnl
+    
+    def optimize_parallel(self, param_ranges):
+        """Run optimization using parallel processing"""
+        param_combinations = list(product(*param_ranges))
+        
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            results = executor.map(self.backtest_strategy, param_combinations)
+        
+        for params, pnl in results:
+            if pnl > self.best_pnl:
+                self.best_pnl = pnl
+                self.best_params = params
+        
+        return self.best_params, self.best_pnl`,
+                results: [
+                    { number: "10,000+", label: "Parameter Combinations Tested" },
+                    { number: "45%", label: "PNL Improvement" },
+                    { number: "12x", label: "Faster Than Manual Testing" },
+                    { number: "99.9%", label: "Optimization Accuracy" }
+                ]
+            },
+            project3: {
+                title: "Custom AI Assistant for Data Processing",
+                icon: "fas fa-brain",
+                description: "Built an intelligent automation assistant that combines skip tracing, web scraping, and CRM data entry capabilities. The system uses AI to intelligently process and organize data from multiple sources, significantly reducing manual effort in data collection workflows.",
+                code: `# AI-powered data processing assistant
+import openai
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+class AIDataProcessor:
+    def __init__(self, api_key):
+        openai.api_key = api_key
+        self.processed_data = []
+    
+    def skip_trace_contact(self, name, company):
+        """Use AI to find contact information"""
+        prompt = f"Find professional contact information for {name} at {company}"
+        
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=prompt,
+            max_tokens=150
+        )
+        
+        return self.parse_contact_info(response.choices[0].text)
+    
+    def scrape_and_process(self, url):
+        """Scrape data and use AI for intelligent processing"""
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        raw_data = soup.get_text()
+        
+        # Use AI to structure the data
+        structured_data = self.ai_structure_data(raw_data)
+        return structured_data
+    
+    def auto_crm_entry(self, contact_data):
+        """Automatically enter data into CRM system"""
+        crm_payload = {
+            'name': contact_data['name'],
+            'email': contact_data['email'],
+            'company': contact_data['company'],
+            'phone': contact_data['phone']
+        }
+        
+        # API call to CRM
+        response = requests.post('crm-api-endpoint', json=crm_payload)
+        return response.status_code == 200`,
+                results: [
+                    { number: "85%", label: "Data Accuracy Rate" },
+                    { number: "1000+", label: "Records Processed Daily" },
+                    { number: "90%", label: "Manual Work Reduction" },
+                    { number: "24/7", label: "Automated Operation" }
+                ]
+            }
+        };
+
+        // Function to open project popup
+        function openProjectPopup(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+            
+            // Update popup content
+            document.getElementById('popupTitle').textContent = project.title;
+            document.getElementById('popupDescription').textContent = project.description;
+            document.getElementById('popupCode').textContent = project.code;
+            
+            // Update banner icon
+            const banner = document.getElementById('popupBanner');
+            banner.innerHTML = `<i class="${project.icon}"></i>`;
+            
+            // Update results
+            const resultsContainer = document.getElementById('popupResults');
+            resultsContainer.innerHTML = project.results.map(result => `
+                <div class="result-item">
+                    <span class="result-number">${result.number}</span>
+                    <span class="result-label">${result.label}</span>
+                </div>
+            `).join('');
+            
+            // Show popup
+            document.getElementById('projectPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to close project popup
+        function closeProjectPopup() {
+            document.getElementById('projectPopup').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close popup when clicking overlay
+        document.getElementById('projectPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectPopup();
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeProjectPopup();
+            }
+        });
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        const themeText = themeToggle.querySelector('.theme-text');
+        const body = document.body;
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        // Apply the saved theme on page load
+        if (currentTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+            themeText.textContent = 'Light';
+        }
+
+        // Theme toggle function
+        function toggleTheme() {
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                // Switch to light mode
+                body.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark';
+                localStorage.setItem('theme', 'light');
+            } else {
+                // Switch to dark mode
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Add click event listener to toggle button
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Keyboard accessibility
+        themeToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTheme();
+            }
+        });
+
+        // Optional: System theme detection
+        function detectSystemTheme() {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                if (!localStorage.getItem('theme')) {
+                    body.setAttribute('data-theme', 'dark');
+                    themeIcon.textContent = '☀️';
+                    themeText.textContent = 'Light';
+                }
+            }
+        }
+        
+        // Call on page load
+        detectSystemTheme();
+        
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    body.setAttribute('data-theme', 'dark');
+                    themeIcon.textContent = '☀️';
+                    themeText.textContent = 'Light';
+                } else {
+                    body.removeAttribute('data-theme');
+                    themeIcon.textContent = '🌙';
+                    themeText.textContent = 'Dark';
+                }
+            }
+        });
     </script>
 </body>
 </html>
