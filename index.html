@@ -1785,7 +1785,7 @@ ${name}`;
                     current = target;
                     clearInterval(timer);
                 }
-                element.textContent = Math.floor(current) + (target === 95 ? '%' : target === 4 ? '+' : target === 30? '+':'/7');
+                element.textContent = Math.floor(current) + (target === 95 ? '%' : target === 3 ? '+' : target === 30? '+':'/7');
             }, 20);
         };
 
@@ -1799,7 +1799,7 @@ ${name}`;
                 if (entry.isIntersecting) {
                     const counters = entry.target.querySelectorAll('.stat-number');
                     counters.forEach(counter => {
-                        const target = counter.textContent.includes('4+') ? 4 : 
+                        const target = counter.textContent.includes('3+') ? 3 : 
                                      counter.textContent.includes('%') ? 95 :
                                      counter.textContent.includes('+')? 30:24;
                         animateCounter(counter, target);
