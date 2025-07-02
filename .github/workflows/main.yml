@@ -30,10 +30,10 @@ jobs:
 
       # Step 3: Upload the static files (HTML, CSS, JS) as an artifact
       - name: Upload static site files
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v2
         with:
           path: .           # Use "." if your index.html is in the root folder
 
       # Step 4: Deploy the uploaded artifact to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
