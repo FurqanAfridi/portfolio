@@ -18,7 +18,9 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest  # Use the latest Ubuntu runner provided by GitHub
-
+    environment:           # ✅ REQUIRED for deploy-pages to work
+      name: github-pages
+      
     steps:
       # Step 1: Checkout the source code from your repository
       - name: Checkout source code
