@@ -36,4 +36,4 @@ jobs:
 
       # Step 4: Deploy the uploaded artifact to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-page@v2
+        uses: actions/deploy-pages@v2
