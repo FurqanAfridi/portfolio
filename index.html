@@ -7,7 +7,29 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         /* ===== ADD THESE CSS VARIABLES AT THE TOP OF YOUR CSS FILE ===== */
-        :root {
+        :root 
+        /* Dark mode colors */
+         {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --secondary-bg: #2d2d2d;
+            --card-bg: #242424;
+            --border-color: #404040;
+            --shadow-light: rgba(0,0,0,0.3);
+            --shadow-medium: rgba(0,0,0,0.4);
+            --shadow-heavy: rgba(0,0,0,0.6);
+            --modal-bg: #2d2d2d;
+            --code-bg: #1e1e1e;
+            --code-border: #404040;
+            --code-text: #ffff;
+            --nav-bg: rgba(26,26,26,0.95);
+            --contact-form-bg: #242424;
+            --popup-bg: #2d2d2d;
+            --headings-color-shade-1: #ef5fff;
+            --headings-color-shade-2: #9f92f9;
+        }
+        
+        [data-theme="light"] {
             /* Light mode colors (default) */
             --bg-color: #ffffff;
             --text-color: #333;
@@ -29,26 +51,6 @@
 
         }
 
-        /* Dark mode colors */
-        [data-theme="dark"] {
-            --bg-color: #1a1a1a;
-            --text-color: #ffffff;
-            --secondary-bg: #2d2d2d;
-            --card-bg: #242424;
-            --border-color: #404040;
-            --shadow-light: rgba(0,0,0,0.3);
-            --shadow-medium: rgba(0,0,0,0.4);
-            --shadow-heavy: rgba(0,0,0,0.6);
-            --modal-bg: #2d2d2d;
-            --code-bg: #1e1e1e;
-            --code-border: #404040;
-            --code-text: #ffff;
-            --nav-bg: rgba(26,26,26,0.95);
-            --contact-form-bg: #242424;
-            --popup-bg: #2d2d2d;
-            --headings-color-shade-1: #ef5fff;
-            --headings-color-shade-2: #9f92f9;
-        }
         * {
             margin: 0;
             padding: 0;
@@ -1103,7 +1105,7 @@
             transition: transform 0.3s ease;
         }
 
-        [data-theme="dark"] .theme-icon {
+        [data-theme="light"] .theme-icon {
             transform: rotate(180deg);
         }
 
